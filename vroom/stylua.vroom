@@ -17,11 +17,12 @@ examples.
 
 stylua expects the executable to be installed on your system.
 
+  :silent file somefile.lua
   % function hello()<CR>
   % print("world")<CR>
   % end
   :FormatCode stylua
-  ! stylua -i 2> .*
+  ! stylua --stdin-filepath *somefile.lua* (glob)
   $ function hello()
   $   print("world")
   $ end
@@ -31,7 +32,7 @@ stylua_executable flag if the default of "buildifier" doesn't work.
 
   :Glaive codefmt stylua_executable='mystylua'
   :FormatCode stylua
-  ! mystylelua -i 2> .*
+  ! mystylua .*
   $ function hello()
   $   print("world")
   $ end
@@ -42,12 +43,12 @@ Errors are reported using the quickfix list.
   @clear
   % 13()
   :FormatCode stylua
-  ! stylua -i 2> (.*)
+  ! stylua .* 2> (.*)
   $ 1 (status)
   $ echo >\1 ' (command)
   |stylua:Unable to format stdin:\n
   |[string "isCodeValid"]:1: unexpected symbol near '"'13'"
-  ~ (1 of 1): unexpected symbol near '13'
+  ~ *unexpected symbol near '13' (glob)
   :echomsg line('.') . ',' . col('.')
   ~ 1,1
   :echomsg string(map(getqflist(), 'v:val.lnum . "," . v:val.text'))
