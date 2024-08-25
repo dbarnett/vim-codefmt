@@ -49,6 +49,7 @@ The current list of defaults by filetype is:
   * lua: luaformatterfiveone
   * nix: nixpkgs-fmt
   * ocaml: ocamlformat
+  * perl: perltidy
   * python: autopep8, black, yapf
   * ruby: rubocop
   * rust: rustfmt
@@ -114,6 +115,10 @@ Default: 'gn' `
                                                *codefmt:buildifier_executable*
 The path to the buildifier executable.
 Default: 'buildifier' `
+
+                                                 *codefmt:perltidy_executable*
+The path to the perltidy executable.
+Default: 'perltidy' `
 
                                                 *codefmt:buildifier_lint_mode*
 The lint_mode for buildifier. passed to buildifier --lint parameter.

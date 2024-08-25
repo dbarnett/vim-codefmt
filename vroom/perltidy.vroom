@@ -18,6 +18,7 @@ must be installed on your system. (But not for testing; vroom intercepts
 system calls.)
   :FormatCode perltidy
   ! perltidy .*
+  $ 
 
 
 
@@ -25,6 +26,7 @@ The name and path of the Perltidy executable can be configured with a flag:
   :Glaive codefmt perltidy_executable=some_other_program
   :FormatCode perltidy
   ! some_other_program .*
+  $ 
   :Glaive codefmt perltidy_executable=perltidy
 
 
@@ -33,6 +35,5 @@ Perltidy does basic whitespace management.
   % my @nums = (1 .. 5);<CR>
   :FormatCode perltidy
   ! perltidy .*
-  $ =========
   $ my @nums = ( 1 .. 5 );
   my @nums = ( 1 .. 5 );
